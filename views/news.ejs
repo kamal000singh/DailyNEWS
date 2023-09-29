@@ -17,7 +17,7 @@
           ></span
         >
         <h5 class="lh-1 mb-1" style="text-align: justify">
-          <%=article.description.substring(0,150)+"..."%>
+          <%=article?.description?.length<=150?article?.description:article?.description?.substring(0,150)+"..."%>
           <a class="" href="<%=article.url%>" target="_blank">Read More</a>
         </h5>
         <img

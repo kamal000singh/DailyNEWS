@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const NewsAPI = require("newsapi");
 const newsapi = new NewsAPI("19dffc7698384bba9b3b3eee5566c0dc");
 const app = express();
+require("dotenv").config();
+const PORT = process.env.PORT;
 app.use(bodyParser.urlencoded({ extended: true }));
 let newsdata = "";
 let ct = "";
@@ -40,6 +42,6 @@ app.post("/", function (req, res) {
   search = req.body.search;
   res.redirect("/");
 });
-app.listen(process.env.PORT || 3000, function () {
-  console.log("START SERVER\nPORT : 3000");
+app.listen(PORT, function () {
+  console.log(`START SERVER on PORT : ${PORT}`);
 });
